@@ -6,7 +6,7 @@ enableEmoji = true
 footnotereturnlinkcontents = "↩"
 languageCode = "en-us"
 metaDataFormat = "yaml"
-title = "Hugo"
+title = "NavCoin"
 theme = "gohugoioTheme"
 
 googleAnalytics = "UA-7131036-4"
@@ -120,7 +120,7 @@ anchor = "smart"
 # High level items
 
 [[menu.docs]]
-  name = "About Hugo"
+  name = "About Blockchain"
   weight = 1
   identifier = "about"
   url = "/about/"
@@ -265,7 +265,7 @@ anchor = "smart"
     icon = true
     identifier = "community"
     post = "external"
-    url = "https://discourse.gohugo.io/"
+    url = "https://navhub.org/"
 
 
   [[menu.global]]
@@ -273,7 +273,7 @@ anchor = "smart"
     weight = 200
     identifier = "github"
     post = "external"
-    url = "https://github.com/gohugoio/hugo"
+    url = "https://github.com/navcoin/navcoin-core"
 
 ### LANGUAGES ###
 
