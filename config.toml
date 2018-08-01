@@ -234,11 +234,11 @@ anchor = "smart"
 
 ######## GLOBAL ITEMS TO BE SHARED WITH THE HUGO SITES
 
-[[menu.global]]
-    name = "News"
-    weight = 1
-    identifier = "news"
-    url = "/news/"
+#[[menu.global]]
+#    name = "News"
+#    weight = 1
+#    identifier = "news"
+#    url = "/news/"
 
   [[menu.global]]
     name = "Docs"
@@ -246,17 +246,17 @@ anchor = "smart"
     identifier = "docs"
     url = "/documentation/"
 
-  [[menu.global]]
-    name = "Themes"
-    weight = 10
-    identifier = "themes"
-    url = "https://themes.gohugo.io/"
+#  [[menu.global]]
+#    name = "Themes"
+#    weight = 10
+#    identifier = "themes"
+#    url = "https://themes.gohugo.io/"
 
-    [[menu.global]]
-      name = "Showcase"
-      weight = 20
-      identifier = "showcase"
-      url = "/showcase/"
+#    [[menu.global]]
+#      name = "Showcase"
+#      weight = 20
+#      identifier = "showcase"
+#      url = "/showcase/"
 
   # Anything with a weight > 100 gets an external icon
   [[menu.global]]
