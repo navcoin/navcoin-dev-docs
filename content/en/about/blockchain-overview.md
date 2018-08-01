@@ -2,7 +2,7 @@
 
 ---
 title: Blockchain Overview
-linktitle: Overview
+linktitle: Blockchain Overview
 description: Understand the basics of how a blockchain works
 date: 2018-05-25
 layout: single
