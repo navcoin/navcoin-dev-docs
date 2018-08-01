@@ -21,7 +21,7 @@ toc: true
 Every block must include one or more transactions. The first one of these transactions must be a coinbase transaction, also called a generation transaction, which should collect and spend the block reward (comprised of a block subsidy and any transaction fees paid by transactions included in this block).
 
 ## Coinbase
-The UTXO of a coinbase transaction has the special condition that it cannot be spent (used as an input) for at least 100 blocks. This temporarily prevents a staker from spending the transaction fees and block reward from a block that may later be determined to be stale (and therefore the coinbase transaction destroyed) after a block chain fork.
+The UTXO of a coinbase transaction has the special condition that it cannot be spent (used as an input) for at least 240 blocks. This temporarily prevents a staker from spending the transaction fees and block reward from a block that may later be determined to be stale (and therefore the coinbase transaction destroyed) after a block chain fork.
 
 Blocks are not required to include any non-coinbase transactions, but staker almost always do include additional transactions in order to collect their transaction fees.
 
