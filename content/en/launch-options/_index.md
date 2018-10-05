@@ -1,19 +1,19 @@
 ---
 date: 2018-04-16
 title: "NavCoin Core Wallet Launch Options"
-slug: navcore_launch_opt
-url: /commands/navcore_launch_opt/
+slug: launch-options
+url: /launch-options/
+toc: true
+sections_weight: 10
+
 ---
-## NavCoin Core Wallet Launch Options
 
+The NavCoin Core Wallet has a number of launch options available to it. You can use multiple args at once.
 
-### Options
-
-NavCoin Core version v4.3.0.0-cc3ca74-dirty (64-bit)
 Usage:
   `navcoin-qt [command-line options]                     `
 
-### Options:
+### Basic Options:
 
 ```
 -?
@@ -96,6 +96,26 @@ Usage:
 
 -spentindex
 # Maintain a full spent index, used to query the spending txid and input index for an outpoint (default: 0) 
+```
+
+### Chain selection options:
+
+There are a number of networks you can connect to when launching the wallet. 
+By default you launch on the mainnet, all of the other networks are for various forms of testing.
+
+```
+-testnet
+
+# Launches with the test chain. This is generally considered to be stable and is suitable for testing any kind of application or node on.
+
+-devnet  
+
+# Launches with the dev chain
+
+-regnet  
+# Launches with the regression chain. 
+# The regnet mode is for solo testing and doesn't connect to any other NavCoin clients. It attempts to create a new genesis block on launch and the wallet will fail to launch is there is an existing `regnet` folder containing data in your wallet data directoty.
+# The regnet will allow you to manipulate the blockchain and generate blocks at will.
 ```
 
 ### Clock options:
@@ -328,18 +348,6 @@ Usage:
 # Shrink debug.log file on client startup (default: 1 when no -debug) 
 ```
 
-### Chain selection options:
-
-```
--testnet
-# Use the test chain 
-
--devnet
-# Use the dev chain
-
--regnet
-# Use the regression chain
-```
 
 ### Node relay options:
 
@@ -432,3 +440,4 @@ Usage:
 -resetguisettings
 # Reset all settings changed in the GUI 
 
+```

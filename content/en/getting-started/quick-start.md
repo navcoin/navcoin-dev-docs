@@ -25,7 +25,6 @@ You also need [Git installed](https://git-scm.com/downloads) to run this tutoria
 {{% /note %}}
 
 
-
 ## Step 1: Install Hugo
 
 {{% note %}}
