@@ -175,7 +175,7 @@ anchor = "smart"
   name = "RPC Commands"
   weight = 40
   post = "break"
-  identifier = "rpc-commands"
+  identifier = "rpc"
   url = "/rpc-commands/"
 
 
