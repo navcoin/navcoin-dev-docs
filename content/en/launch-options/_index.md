@@ -106,16 +106,19 @@ By default you launch on the mainnet, all of the other networks are for various 
 ```
 -testnet
 
-# Launches with the test chain. This is generally considered to be stable and is suitable for testing any kind of application or node on.
+# Launches with the test chain. Functions the same as the mainnet. 
+#This is generally considered to be stable and is suitable for testing any kind of application or node on.
 
 -devnet  
 
-# Launches with the dev chain
+# Launches with the dev chain. Functions the same as the mainnet but with faster timings for block generation and community fund proposals. 
+# This is intended for developers to test changes with a network.
 
 -regnet  
-# Launches with the regression chain. 
-# The regnet mode is for solo testing and doesn't connect to any other NavCoin clients. It attempts to create a new genesis block on launch and the wallet will fail to launch is there is an existing `regnet` folder containing data in your wallet data directoty.
-# The regnet will allow you to manipulate the blockchain and generate blocks at will.
+# Launches with the regression chain.
+# The regnet is generally intended for solo testing, however it is possible to connect multiple clients to one regnet (it won't connect to them by default though). 
+# It attempts to create a new genesis block on launch and the wallet will fail to launch is there is an existing `regnet` folder containing data in your wallet data directoty.
+# The regnet allows you to manipulate the blockchain with console commands (e.g. you can generate blocks at will with the generate commands).
 ```
 
 ### Clock options:
