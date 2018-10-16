@@ -136,24 +136,16 @@ anchor = "smart"
   weight = 10
   identifier = "launch-options"
   url = "/launch-options/"
+
+[[menu.docs]]
+  name = "NavCoin Networks"
+  weight = 15
+  identifier = "navcoin-networks"
+  url = "/navcoin-networks/"
   post = "break"
 
 
 # Core Menus
-
-[[menu.docs]]
-  name = "Content Management"
-  weight = 20
-  identifier = "content-management"
-  post = "expanded"
-  url = "/content-management/"
-
-[[menu.docs]]
-  name = "Templates"
-  weight = 25
-  identifier = "templates"
-
-  url = "/templates/"
 
 [[menu.docs]]
   name = "Functions"
@@ -162,22 +154,11 @@ anchor = "smart"
   url = "/functions/"
 
 [[menu.docs]]
-  name = "Variables"
-  weight = 35
-  identifier = "variables"
-  url = "/variables/"
-[[menu.docs]]
-  name = "Hugo Pipes"
-  weight = 36
-  identifier = "pipes"
-  url = "/hugo-pipes/"
-[[menu.docs]]
   name = "RPC Commands"
   weight = 40
   post = "break"
   identifier = "rpc"
   url = "/rpc-commands/"
-
 
 
 # LOW LEVEL ITEMS
@@ -194,12 +175,6 @@ anchor = "smart"
   weight = 70
   identifier = "tools"
   url = "/tools/"
-
-[[menu.docs]]
-  name = "Hosting & Deployment"
-  weight = 80
-  identifier = "hosting-and-deployment"
-  url = "/hosting-and-deployment/"
 
 [[menu.docs]]
   name = "Contribute"
