@@ -1,7 +1,7 @@
 ---
 title: Quick Start
 linktitle: Quick Start
-description: Create a Hugo site using the beautiful Ananke theme.
+description: Learn how to interface with the blockchain by connecting to the NavCoin daemon and running RPC commands.
 date: 2013-07-01
 publishdate: 2013-07-01
 categories: [getting started]
@@ -25,6 +25,8 @@ This quick start uses `macOS` in the examples. For instructions about how to ins
 
 ## Step 1: Install NavCoin
 
+See this page on [installing](/getting-started/installing) NavCoin.
+You will need `navcoind` (the navcoin daemon) and `navcoin-cli`, so you'll need to download one of the tar or zips of the wallet instead of an installer.
 
 ## Step 2: Choose your network
 
@@ -41,11 +43,53 @@ For this quick start guide we will assume you want to connect to the Testnet.
 
 ## Step 3: Connect to the Test Network and sync the blockchain
 
+There are two ways to pass configuration options to the daemon, via arguments you pass when you launch the wallet daemon, or via a config file.
+You can also do both at the same time, however anything passed via cli arguments will overwrite anything in the config file.
+
+### Command line arguments
+
+When launching from the command line, run `navcoin-qt -testnet -rpcuser="user" -rpcpass="pass"` to launch the wallet in Testnet mode.
+
+### Configuration file
+
+The default location for the NavCoin config file is:  
+
+```bash
+~/Library/Application Support/NavCoin4/navcoin.conf # MacOS
+C:\Users\(YOUR USERNAME)\AppData\Roaming\NavCoin4\navcoin.conf  # Windows
+~/.navcoin4/navcoin.conf  # Linux
+```  
+
+If it doesn't exist, create it.  
+Inside this file add the lines:
+
+```bash
+testnet=1
+rpcuser="user"
+rpcpassword="pass"
+```
+
+Now when you launch the wallet it will connect to the Testnet.
 
 ## Step 4: Run an RPC command from the console
 
+Inside a terminal `cd` to where NavCoin is installed.  
+
+```bash
+cd /Applications/NavCoin-Qt.app/Contents/MacOS # MacOS
+```
+
+If you haven't launched it in Testmode already, run `navcoin-qt -testnet -rpcuser="user" -rpcpass="pass"` to launch the wallet.
+
 
 ## Step 5: Run an RPC command using Postman
+
+- First install Postman from [here](https://www.getpostman.com/).  
+- Open it up and also make sure you've launched your wallet in Testnet mode like in Step 4.
+- In Postman configure these settings:
+  - Set the request type to `POST`
+  - Under the 'Body' tab 
+
 
 
 

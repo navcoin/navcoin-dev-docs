@@ -35,15 +35,15 @@ NavCoin currently provides pre-built binaries for the following:
 * ARM Linux
 * i686 Linux
 
-NavCoin may also be compiled from source using .
+NavCoin may also be compiled from source using a C++ compiler.
 
-## Quick Install
+## Quick Install 
 
 ### Binary (Cross-platform)
 
 Download the appropriate version for your platform from [NavCoin Releases](https://github.com/NAVCoin/navcoin-core/releases/latest). 
 
-### Build from Source
+## Build from Source
 
 See [this document](https://github.com/NAVCoin/navcoin-core/blob/master/doc/README.md)
 
@@ -54,4 +54,4 @@ Then download the latest version, make sure your wallet is shutdown, and simply 
 
 ## Next Steps
 
-Now that you've installed NavCoin, read the [Quick Start guide][quickstart] and explore the rest of the documentation. If you have questions, ask the NavCoin community directly by visiting the [NavCoin Discussion Forum][forum].
+Now that you've installed NavCoin, read the [Quick Start guide](/quickstart) and explore the rest of the documentation. If you have questions, ask the NavCoin community directly by visiting the [NavCoin discord](https://discord.gg/Dba8seZ).

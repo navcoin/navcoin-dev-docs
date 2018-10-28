@@ -1,14 +1,16 @@
 ---
 date: 2018-04-16
-title: "NavCoin Core Wallet Launch Options"
+title: "Launch Arguments"
 slug: launch-options
 url: /launch-options/
 toc: true
 sections_weight: 10
-
+weight: 60
+sections_weight: 60
 ---
 
-The NavCoin Core Wallet has a number of launch options available to it. You can use multiple args at once.
+The NavCoin Core Wallet has a number of launch options available to it. You can use multiple args at once.  
+Launch options will override options set in the configuration file if a conflict arises. In the case of an option being specified more than once or two options conflicting, the later option will override the earlier.
 
 Usage:
   `navcoin-qt [command-line options]`
@@ -101,21 +103,18 @@ Usage:
 ### Chain selection options
 
 There are a number of networks you can connect to when launching the wallet.
-By default you launch on the mainnet, all of the other networks are for various forms of testing.
-
+By default you launch on the mainnet, all of the other networks are for various forms of testing.  
+For more information see [navcoin-networks](/navcoin-networks)
 ```bash
 -testnet
-
 # Launches with the test chain. Functions the same as the mainnet.
 # This is generally considered to be stable and is suitable for testing any kind of application or node on.
 
 -devnet  
-
 # Launches with the dev chain. Functions the same as the mainnet but with faster timings for block generation and community fund proposals.
 # This is intended for developers to test changes with a network.
 
 -regnet
-
 # Launches with the regression chain.
 # The regnet is generally intended for solo testing, however it is possible to connect multiple clients to one regnet (it won't connect to them by default though).
 # It attempts to create a new genesis block on launch and the wallet will fail to launch is there is an existing `regnet` folder containing data in your wallet data directoty.
