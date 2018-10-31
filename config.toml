@@ -9,6 +9,8 @@ metaDataFormat = "yaml"
 title = "NavCoin"
 theme = "gohugoioTheme"
 
+disableKinds = ["home"]
+
 # googleAnalytics = "UA-7131036-4"
 
 pluralizeListTitles = false
