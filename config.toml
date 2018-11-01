@@ -156,12 +156,12 @@ anchor = "smart"
 
 # Core Menus
 
-[[menu.docs]]
-  name = "RPC Commands"
-  weight = 40
-  post = "break"
-  identifier = "rpc"
-  url = "/rpc-commands/"
+# [[menu.docs]]
+  # name = "RPC Commands"
+  # weight = 40
+  # post = "break"
+  # identifier = "rpc"
+  # url = "/rpc-commands/"
 
 
 # LOW LEVEL ITEMS
@@ -179,12 +179,12 @@ anchor = "smart"
 #   identifier = "tools"
 #   url = "/tools/"
 
-[[menu.docs]]
-  name = "Contribute"
-  weight = 100
-  post = "break"
-  identifier = "contribute"
-  url = "/contribute/"
+#[[menu.docs]]
+#  name = "Contribute"
+#  weight = 100
+#  post = "break"
+#  identifier = "contribute"
+#  url = "/contribute/"
 
 #[[menu.docs]]
 #  name = "Tags"

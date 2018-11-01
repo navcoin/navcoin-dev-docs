@@ -11,7 +11,7 @@ menu:
 weight: 01	#rem
 draft: false
 slug:
-aliases: []
+aliases: [/]
 toc: false
 layout: documentation-home
 ---

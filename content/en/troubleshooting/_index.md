@@ -10,7 +10,7 @@ menu:
     parent: "troubleshooting"
     weight: 1
 weight: 1	
-draft: false
+draft: true
 hidesectioncontents: false
 slug:
 aliases: [/troubleshooting/faqs/,/faqs/]

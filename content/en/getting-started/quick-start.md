@@ -14,7 +14,7 @@ menu:
 weight: 10
 sections_weight: 10
 draft: false
-aliases: [/quickstart/,/overview/quickstart/]
+aliases: [/quickstart/,/overview/quickstart/,/]
 toc: true
 ---
 
@@ -26,7 +26,9 @@ This quick start uses `macOS` in the examples. For instructions about how to ins
 ## Step 1: Install NavCoin
 
 See this page on [installing](/getting-started/installing) NavCoin.
-You will need `navcoind` (the navcoin daemon) and `navcoin-cli`, so you'll need to download one of the tar or zips of the wallet instead of an installer.
+{{% note %}}
+You will need `navcoind` (the navcoin daemon) and `navcoin-cli`, so you'll need to download one of the .tars or .zips of the wallet instead of an installer, as they contain these files and the installers don't.
+{{% /note %}}
 
 ## Step 2: Choose your network
 
@@ -48,7 +50,7 @@ You can also do both at the same time, however anything passed via cli arguments
 
 ### Command line arguments
 
-When launching from the command line, run `navcoin-qt -testnet -rpcuser="user" -rpcpass="pass"` to launch the wallet in Testnet mode.
+When launching from the command line, run `navcoind -testnet -rpcuser="user" -rpcpass="pass"` to launch the wallet in Testnet mode.
 
 ### Configuration file
 
@@ -73,13 +75,45 @@ Now when you launch the wallet it will connect to the Testnet.
 
 ## Step 4: Run an RPC command from the console
 
-Inside a terminal `cd` to where NavCoin is installed.  
+Inside a terminal `cd` to where you extracted the NavCoin executables.  
 
 ```bash
-cd /Applications/NavCoin-Qt.app/Contents/MacOS # MacOS
+cd ~/Downloads/navcoin-4.4.0/bin/
 ```
 
-If you haven't launched it in Testmode already, run `navcoin-qt -testnet -rpcuser="user" -rpcpass="pass"` to launch the wallet.
+If you haven't launched it in Testmode already, run `navcoind -testnet -rpcuser="user" -rpcpass="pass"` to launch the wallet daemon.
+Next (in a new terminal window) run:  
+```bash
+./navcoin-cli -testnet getinfo # The -testnet flag is needed as our wallet is connected to the testnet
+```
+You should get an output similar to this:  
+```json
+{
+  "version": 4040000,
+  "protocolversion": 70020,
+  "walletversion": 130000,
+  "balance": 0.00000000,
+  "newmint": 0.00000000,
+  "stake": 0.00000000,
+  "blocks": 1199,
+  "communityfund": {
+    "available": 0.00000000,
+    "locked": 0.00000000
+  },
+  "timeoffset": 0,
+  "ntptimeoffset": 0,
+  "connections": 1,
+  "proxy": "",
+  "testnet": true,
+  "keypoololdest": 1539830083,
+  "keypoolsize": 100,
+  "paytxfee": 0.00100000,
+  "relayfee": 0.00010000,
+  "errors": ""
+}
+```
+Congrats you've just run your first RPC command via the console!  
+To get a list of RPC commands you can run, run the command `./navcoin-cli -testnet help`
 
 
 ## Step 5: Run an RPC command using Postman
