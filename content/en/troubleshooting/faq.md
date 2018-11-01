@@ -11,6 +11,7 @@ keywords: [faqs]
 weight: 2
 toc: true
 aliases: [/faq/]
+draft: true
 ---
 
 {{% note %}}

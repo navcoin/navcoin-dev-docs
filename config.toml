@@ -9,7 +9,9 @@ metaDataFormat = "yaml"
 title = "NavCoin"
 theme = "gohugoioTheme"
 
-googleAnalytics = "UA-7131036-4"
+disableKinds = ["home"]
+
+# googleAnalytics = "UA-7131036-4"
 
 pluralizeListTitles = false
 
@@ -63,7 +65,7 @@ weight = 10
 pattern = "2006"
 
 [social]
-twitter = "GoHugoIO"
+twitter = "navcoin"
 
 #CUSTOM PARAMS
 [params]
@@ -79,9 +81,9 @@ twitter = "GoHugoIO"
   ### Edit content repo (set to automatically enter "edit" mode; this is good for "improve this page" links)
   ghdocsrepo = "https://github.com/navcoin/navcoin_core/tree/master/docs"
   ## Gitter URL
-  gitter = "https://gitter.im/spf13/hugo"
+  # gitter = "https://gitter.im/spf13/hugo"
   ## Discuss Forum URL
-  forum = "https://discourse.gohugo.io/"
+  # forum = "https://discourse.gohugo.io/"
   ## Google Tag Manager
   gtmid = ""
 
@@ -136,77 +138,53 @@ anchor = "smart"
   weight = 10
   identifier = "launch-options"
   url = "/launch-options/"
+
+[[menu.docs]]
+  name = "Configure NavCoin"
+  weight = 15
+  identifier = "configuration"
+  url = "/configuration/"
+
+
+[[menu.docs]]
+  name = "NavCoin Networks"
+  weight = 20
+  identifier = "navcoin-networks"
+  url = "/navcoin-networks/"
   post = "break"
 
 
 # Core Menus
 
-[[menu.docs]]
-  name = "Content Management"
-  weight = 20
-  identifier = "content-management"
-  post = "expanded"
-  url = "/content-management/"
-
-[[menu.docs]]
-  name = "Templates"
-  weight = 25
-  identifier = "templates"
-
-  url = "/templates/"
-
-[[menu.docs]]
-  name = "Functions"
-  weight = 30
-  identifier = "functions"
-  url = "/functions/"
-
-[[menu.docs]]
-  name = "Variables"
-  weight = 35
-  identifier = "variables"
-  url = "/variables/"
-[[menu.docs]]
-  name = "Hugo Pipes"
-  weight = 36
-  identifier = "pipes"
-  url = "/hugo-pipes/"
-[[menu.docs]]
-  name = "RPC Commands"
-  weight = 40
-  post = "break"
-  identifier = "rpc"
-  url = "/rpc-commands/"
-
+# [[menu.docs]]
+  # name = "RPC Commands"
+  # weight = 40
+  # post = "break"
+  # identifier = "rpc"
+  # url = "/rpc-commands/"
 
 
 # LOW LEVEL ITEMS
 
 
-[[menu.docs]]
-  name = "Troubleshooting"
-  weight = 60
-  identifier = "troubleshooting"
-  url = "/troubleshooting/"
+# [[menu.docs]]
+#   name = "Troubleshooting"
+#   weight = 60
+#   identifier = "troubleshooting"
+#   url = "/troubleshooting/"
 
-[[menu.docs]]
-  name = "Tools"
-  weight = 70
-  identifier = "tools"
-  url = "/tools/"
+# [[menu.docs]]
+#   name = "Tools"
+#   weight = 70
+#   identifier = "tools"
+#   url = "/tools/"
 
-[[menu.docs]]
-  name = "Hosting & Deployment"
-  weight = 80
-  identifier = "hosting-and-deployment"
-  url = "/hosting-and-deployment/"
-
-[[menu.docs]]
-  name = "Contribute"
-  weight = 100
-  post = "break"
-  identifier = "contribute"
-  url = "/contribute/"
+#[[menu.docs]]
+#  name = "Contribute"
+#  weight = 100
+#  post = "break"
+#  identifier = "contribute"
+#  url = "/contribute/"
 
 #[[menu.docs]]
 #  name = "Tags"

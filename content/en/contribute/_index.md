@@ -12,7 +12,7 @@ menu:
     parent: "contribute"
     weight: 01
 weight: 01	#rem
-draft: false
+draft: true
 slug:
 aliases: [/tutorials/how-to-contribute-to-hugo/,/community/contributing/]
 toc: false

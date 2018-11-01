@@ -1,7 +1,7 @@
 ---
 title: Quick Start
 linktitle: Quick Start
-description: Create a Hugo site using the beautiful Ananke theme.
+description: Learn how to interface with the blockchain by connecting to the NavCoin daemon and running RPC commands.
 date: 2013-07-01
 publishdate: 2013-07-01
 categories: [getting started]
@@ -14,126 +14,117 @@ menu:
 weight: 10
 sections_weight: 10
 draft: false
-aliases: [/quickstart/,/overview/quickstart/]
+aliases: [/quickstart/,/overview/quickstart/,/]
 toc: true
 ---
 
 {{% note %}}
-This quick start uses `macOS` in the examples. For instructions about how to install Hugo on other operating systems, see [install](/getting-started/installing).
-
-You also need [Git installed](https://git-scm.com/downloads) to run this tutorial.
+This quick start uses `macOS` in the examples. For instructions about how to install NavCoin on other operating systems, see [install](/getting-started/installing).
 {{% /note %}}
 
 
-## Step 1: Install Hugo
+## Step 1: Install NavCoin
 
+See this page on [installing](/getting-started/installing) NavCoin.
 {{% note %}}
-`Homebrew`, a package manager for `macOS`,  can be installed from [brew.sh](https://brew.sh/). See [install](/getting-started/installing) if you are running Windows etc.
+You will need `navcoind` (the navcoin daemon) and `navcoin-cli`, so you'll need to download one of the .tars or .zips of the wallet instead of an installer, as they contain these files and the installers don't.
 {{% /note %}}
 
-```bash
-brew install hugo
-```
+## Step 2: Choose your network
 
-To verify your new install:
+NavCoin has four blockchains that you can choose to sync with:
 
-```bash
-hugo version
-```
+- Mainnet
+- Testnet
+- Devnet
+- Regtest
 
+Each of these networks has a different purpose, to read about what they are for and how they co-exist, see [navcoin-networks]
 
-{{< asciicast HDlKrUrbfT7yiWsbd6QoxzRTN >}}
+For this quick start guide we will assume you want to connect to the Testnet.
 
+## Step 3: Connect to the Test Network and sync the blockchain
 
-## Step 2: Create a New Site
+There are two ways to pass configuration options to the daemon, via arguments you pass when you launch the wallet daemon, or via a config file.
+You can also do both at the same time, however anything passed via cli arguments will overwrite anything in the config file.
 
-```bash
-hugo new site quickstart
-```
+### Command line arguments
 
-The above will create a new Hugo site in a folder named `quickstart`.
+When launching from the command line, run `navcoind -testnet -rpcuser="user" -rpcpass="pass"` to launch the wallet in Testnet mode.
 
-{{< asciicast 1PH9A2fs14Dnyarx5v8OMYQer >}}
+### Configuration file
 
-
-## Step 3: Add a Theme
-
-See [themes.gohugo.io](https://themes.gohugo.io/) for a list of themes to consider. This quickstart uses the beautiful [Ananke theme](https://themes.gohugo.io/gohugo-theme-ananke/).
+The default location for the NavCoin config file is:  
 
 ```bash
-cd quickstart;\
-git init;\
-git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke;\
+~/Library/Application Support/NavCoin4/navcoin.conf # MacOS
+C:\Users\(YOUR USERNAME)\AppData\Roaming\NavCoin4\navcoin.conf  # Windows
+~/.navcoin4/navcoin.conf  # Linux
+```  
 
-# Edit your config.toml configuration file
-# and add the Ananke theme.
-echo 'theme = "ananke"' >> config.toml
+If it doesn't exist, create it.  
+Inside this file add the lines:
+
+```bash
+testnet=1
+rpcuser="user"
+rpcpassword="pass"
 ```
 
+Now when you launch the wallet it will connect to the Testnet.
 
-{{< asciicast WJM2LEZQs8VRhNeuZ5NiGPp9I >}}
+## Step 4: Run an RPC command from the console
 
-## Step 4: Add Some Content
+Inside a terminal `cd` to where you extracted the NavCoin executables.  
 
-```
-hugo new posts/my-first-post.md
-```
-
-
-Edit the newly created content file if you want. Now, start the Hugo server with [drafts](/getting-started/usage/#draft-future-and-expired-content) enabled:
-
-```
-▶ hugo server -D
-
-Started building sites ...
-Built site for language en:
-1 of 1 draft rendered
-0 future content
-0 expired content
-1 regular pages created
-8 other pages created
-0 non-page files copied
-1 paginator pages created
-0 categories created
-0 tags created
-total in 18 ms
-Watching for changes in /Users/bep/sites/quickstart/{data,content,layouts,static,themes}
-Serving pages from memory
-Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
-Press Ctrl+C to stop
+```bash
+cd ~/Downloads/navcoin-4.4.0/bin/
 ```
 
-
-**Navigate to your new site at [http://localhost:1313/](http://localhost:1313/).**
-
-
-
-## Step 5: Customize the Theme
-
-Your new site already looks great, but you will want to tweak it a little before you release it to the public.
-
-### Site Configuration
-
-Open up `config.toml` in a text editor:
-
+If you haven't launched it in Testmode already, run `navcoind -testnet -rpcuser="user" -rpcpass="pass"` to launch the wallet daemon.
+Next (in a new terminal window) run:  
+```bash
+./navcoin-cli -testnet getinfo # The -testnet flag is needed as our wallet is connected to the testnet
 ```
-baseURL = "https://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
-theme = "ananke"
+You should get an output similar to this:  
+```json
+{
+  "version": 4040000,
+  "protocolversion": 70020,
+  "walletversion": 130000,
+  "balance": 0.00000000,
+  "newmint": 0.00000000,
+  "stake": 0.00000000,
+  "blocks": 1199,
+  "communityfund": {
+    "available": 0.00000000,
+    "locked": 0.00000000
+  },
+  "timeoffset": 0,
+  "ntptimeoffset": 0,
+  "connections": 1,
+  "proxy": "",
+  "testnet": true,
+  "keypoololdest": 1539830083,
+  "keypoolsize": 100,
+  "paytxfee": 0.00100000,
+  "relayfee": 0.00010000,
+  "errors": ""
+}
 ```
-
-Replace the `title` above with something more personal. Also, if you already have a domain ready, set the `baseURL`. Note that this value is not needed when running the local development server. 
-
-{{% note %}}
-**Tip:** Make the changes to the site configuration or any other file in your site while the Hugo server is running, and you will see the changes in the browser right away.
-{{% /note %}}
+Congrats you've just run your first RPC command via the console!  
+To get a list of RPC commands you can run, run the command `./navcoin-cli -testnet help`
 
 
-For theme specific configuration options, see the [theme site](https://github.com/budparr/gohugo-theme-ananke).
+## Step 5: Run an RPC command using Postman
 
-**For further theme customization, see [Customize a Theme](/themes/customizing/).**
+- First install Postman from [here](https://www.getpostman.com/).  
+- Open it up and also make sure you've launched your wallet in Testnet mode like in Step 4.
+- In Postman configure these settings:
+  - Set the request type to `POST`
+  - Under the 'Body' tab 
 
-## Recapitulation
 
-{{< asciicast pWp4uvyAkdWgQllD9RCfeBL5k >}}
+
+
+[navcoin-networks]: /navcoin-networks/
